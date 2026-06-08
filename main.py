@@ -1,9 +1,9 @@
 import sys
+import webbrowser
+from pathlib import Path
 
 from syntaxchecker.syntax_checker import SyntaxChecker
 from typechecker.type_checker import MiniGoTypeChecker
-
-from pathlib import Path
 from encoder.llvm_generator import MiniGoLLVMGenerator
 
 
@@ -19,15 +19,16 @@ class MiniGoCompiler:
         print()
 
         if not self._run_syntax_analysis():
-            return
-
-        if not self._run_code_generation():
-            return
+            return False
 
         if not self._run_type_checking():
-            return
+            return False
 
-        print("Compilación finalizada correctamente hasta fase semántica.")
+        if not self._run_code_generation():
+            return False
+
+        print("Compilación finalizada correctamente.")
+        return True
 
     def _run_syntax_analysis(self):
         print("[1] Ejecutando análisis sintáctico...")
@@ -56,7 +57,7 @@ class MiniGoCompiler:
             self.type_result.print_errors()
             return False
 
-        print("Análisis semántico inicial correcto.")
+        print("Análisis semántico correcto.")
         print()
         return True
 
@@ -77,12 +78,35 @@ class MiniGoCompiler:
         return True
 
 
+def launch_ide():
+    from ide_ui.app import app
+
+    url = "http://127.0.0.1:5000"
+
+    print("=== MiniGo Compiler IDE ===")
+    print("Iniciando interfaz visual...")
+    print(f"Abrir en el navegador: {url}")
+    print()
+    print("Para detener el servidor, presione CTRL + C.")
+    print()
+
+    webbrowser.open(url)
+
+    app.run(
+        host="127.0.0.1",
+        port=5000,
+        debug=False,
+        use_reloader=False
+    )
+
+
 def main():
-    if len(sys.argv) < 2:
-        print("Uso:")
-        print("python main.py tests/test01_println.mgo")
+    # Si se ejecuta sin argumentos, levanta la interfaz visual.
+    if len(sys.argv) == 1:
+        launch_ide()
         return
 
+    # Si se pasa un archivo, funciona como compilador por consola.
     source_file = sys.argv[1]
 
     compiler = MiniGoCompiler(source_file)
