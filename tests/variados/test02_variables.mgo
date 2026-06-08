@@ -1,0 +1,8 @@
+package main;
+
+var x int = 10;
+
+func main() {
+    var y int = 20;
+    println(y);
+};
