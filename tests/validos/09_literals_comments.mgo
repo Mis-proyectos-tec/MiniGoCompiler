@@ -1,0 +1,20 @@
+package main;
+
+// Comentario de línea
+/*
+   Comentario de bloque
+*/
+
+func main() {
+    var a int = 10;
+    var b int = 0x10;
+    var c float64 = 3.14;
+    var r rune = 'a';
+    var s string = `raw string`;
+
+    println(a);
+    println(b);
+    println(c);
+    println(r);
+    println(s);
+};

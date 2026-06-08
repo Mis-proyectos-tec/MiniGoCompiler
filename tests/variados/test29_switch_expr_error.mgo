@@ -1,0 +1,10 @@
+package main;
+
+func main() {
+    var x int = 2;
+
+    switch x {
+        case `hola`:
+            println(1);
+    };
+};

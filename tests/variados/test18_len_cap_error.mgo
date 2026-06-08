@@ -1,0 +1,9 @@
+package main;
+
+func main() {
+    var x int = 10;
+    var n int = len(x);
+    var c int = cap(x);
+    println(n);
+    println(c);
+};

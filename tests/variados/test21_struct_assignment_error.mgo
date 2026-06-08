@@ -1,0 +1,11 @@
+package main;
+
+type Persona struct {
+    edad int;
+    nombre string;
+};
+
+func main() {
+    var p Persona;
+    p.edad = `hola`;
+};

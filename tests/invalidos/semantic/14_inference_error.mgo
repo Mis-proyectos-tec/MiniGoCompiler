@@ -1,0 +1,15 @@
+package main;
+
+type Persona struct {
+    nombre string;
+};
+
+func crearPersona() Persona {
+    var p Persona;
+    return p;
+};
+
+func main() {
+    p := crearPersona();
+    println(10);
+};

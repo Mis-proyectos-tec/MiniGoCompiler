@@ -1,0 +1,14 @@
+package main;
+
+func main() {
+    var x int = 10;
+
+    switch {
+        case x < 5:
+            println(1);
+        case x >= 5:
+            println(2);
+        default:
+            println(0);
+    };
+};

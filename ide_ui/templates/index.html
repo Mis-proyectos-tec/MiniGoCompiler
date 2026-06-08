@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniGo Compiler IDE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">MG</div>
+            <div>
+                <h1>MiniGo Compiler IDE</h1>
+                <p>Editor, análisis semántico, generación LLVM y ejecución con Clang</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <select id="testSelector">
+                <option value="">Cargar archivo de prueba...</option>
+            </select>
+
+            <button id="loadTestBtn" class="secondary-btn">Cargar prueba</button>
+            <button id="compileBtn" class="primary-btn">Compilar</button>
+        </div>
+    </header>
+
+    <main class="ide-layout">
+        <section class="editor-section panel">
+            <div class="panel-title">
+                <span>Código MiniGo</span>
+                <span class="tag">editor</span>
+            </div>
+
+            <div id="codeEditor" class="monaco-editor-container"></div>
+        </section>
+
+        <aside class="right-column">
+            <section class="terminal-section panel">
+                <div class="panel-title">
+                    <span>Salida</span>
+                    <span id="statusTag" class="tag">esperando</span>
+                </div>
+
+                <pre id="terminalOutput">Esperando compilación...</pre>
+            </section>
+
+            <section class="llvm-section panel">
+                <div class="panel-title">
+                    <span>LLVM generado</span>
+                    <span class="tag">program.ll</span>
+                </div>
+
+                <pre id="llvmOutput">Aquí aparecerá el código LLVM IR.</pre>
+            </section>
+        </aside>
+    </main>
+</div>
+
+<script>
+    window.DEFAULT_CODE = {{ default_code | tojson }};
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

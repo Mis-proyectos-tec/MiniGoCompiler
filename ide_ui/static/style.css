@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0b1120;
+    color: #e5e7eb;
+    font-family: Consolas, "JetBrains Mono", monospace;
+}
+
+.app-shell {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 14px;
+}
+
+.topbar {
+    height: 82px;
+    background: #111827;
+    border: 1px solid #263244;
+    border-radius: 14px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+p {
+    margin: 4px 0 0 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+select {
+    border: 1px solid #334155;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #020617;
+    color: #e5e7eb;
+    font-family: Consolas, monospace;
+    min-width: 280px;
+}
+
+button {
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Consolas, monospace;
+}
+
+.primary-btn {
+    background: #2563eb;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: #334155;
+}
+
+.secondary-btn:hover {
+    background: #475569;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ide-layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(420px, 0.65fr);
+    gap: 14px;
+    min-height: 0;
+}
+
+.right-column {
+    display: grid;
+    grid-template-rows: 0.48fr 0.52fr;
+    gap: 14px;
+    min-height: 0;
+}
+
+.panel {
+    background: #111827;
+    border: 1px solid #263244;
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.panel-title {
+    height: 44px;
+    padding: 0 14px;
+    border-bottom: 1px solid #263244;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: normal;
+    color: #93c5fd;
+    background: #1e3a8a55;
+    border: 1px solid #1d4ed8;
+    padding: 3px 8px;
+    border-radius: 999px;
+}
+
+.tag.success {
+    color: #86efac;
+    background: #14532d55;
+    border-color: #16a34a;
+}
+
+.tag.error {
+    color: #fecaca;
+    background: #7f1d1d55;
+    border-color: #dc2626;
+}
+
+.monaco-editor-container {
+    width: 100%;
+    height: calc(100% - 44px);
+    overflow: hidden;
+}
+
+.editor-section {
+    min-height: 0;
+}
+
+pre {
+    margin: 0;
+    height: calc(100% - 44px);
+    padding: 14px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: #020617;
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+#terminalOutput.success {
+    color: #86efac;
+}
+
+#terminalOutput.error {
+    color: #fca5a5;
+}
+
+#llvmOutput {
+    color: #c4b5fd;
+}
+
+.error-line-highlight {
+    background: rgba(220, 38, 38, 0.18);
+}
+
+.error-glyph {
+    background: #dc2626;
+    border-radius: 50%;
+    width: 9px !important;
+    height: 9px !important;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+@media (max-width: 1100px) {
+    .ide-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .right-column {
+        grid-template-rows: 280px 360px;
+    }
+
+    .topbar {
+        height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

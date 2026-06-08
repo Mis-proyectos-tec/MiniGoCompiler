@@ -1,0 +1,9 @@
+package main;
+
+func imprimir() {
+    println(10);
+};
+
+func main() {
+    imprimir();
+};

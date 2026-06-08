@@ -1,0 +1,7 @@
+package main;
+
+func main() {
+    println(`Hola MiniGo`);
+    println(`Generando LLVM`);
+    println(123);
+};

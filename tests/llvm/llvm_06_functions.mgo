@@ -1,0 +1,23 @@
+package main;
+
+func suma(a int, b int) int {
+    return a + b;
+};
+
+func doble(x int) int {
+    return x * 2;
+};
+
+func imprimir(x int) {
+    println(x);
+};
+
+func main() {
+    var r int = suma(10, 20);
+    println(r);
+
+    var d int = doble(r);
+    println(d);
+
+    imprimir(999);
+};

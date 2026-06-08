@@ -1,0 +1,25 @@
+package main;
+
+type (
+    Edad int;
+    Persona struct {
+        nombre string;
+        edad Edad;
+    };
+);
+
+var (
+    x int;
+    y int = 10;
+    z = 20;
+);
+
+func main() {
+    var p Persona;
+    p.nombre = `Ana`;
+    p.edad = 25;
+
+    println(y);
+    println(z);
+    println(p.nombre);
+};

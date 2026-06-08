@@ -1,0 +1,14 @@
+package main;
+
+func main() {
+    var x int = 0;
+
+    for x < 3 {
+        println(x);
+        x++;
+    };
+
+    for i := 0; i < 3; i++ {
+        println(i + 10);
+    };
+};

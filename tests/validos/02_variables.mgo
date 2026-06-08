@@ -1,0 +1,14 @@
+package main;
+
+var global int = 100;
+
+func main() {
+    var x int = 10;
+    var y = 20;
+    var texto string = `MiniGo`;
+
+    println(global);
+    println(x);
+    println(y);
+    println(texto);
+};

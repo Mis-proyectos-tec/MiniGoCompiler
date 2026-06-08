@@ -1,0 +1,18 @@
+package main;
+
+type Direccion struct {
+    canton string;
+};
+
+type Persona struct {
+    edad int;
+    direccion Direccion;
+};
+
+func main() {
+    var p Persona;
+    p.edad = 20;
+    p.direccion.canton = `San Carlos`;
+
+    println(p.direccion.canton);
+};

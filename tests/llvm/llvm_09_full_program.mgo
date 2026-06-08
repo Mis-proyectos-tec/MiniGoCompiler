@@ -1,0 +1,41 @@
+package main;
+
+func suma(a int, b int) int {
+    return a + b;
+};
+
+func imprimir(x int) {
+    println(x);
+};
+
+func main() {
+    println(`Inicio MiniGo`);
+
+    var x int = 10;
+    var y int = 20;
+    var r int = suma(x, y);
+
+    println(r);
+
+    if r > 20 {
+        println(`Resultado mayor a 20`);
+    } else {
+        println(`Resultado menor o igual a 20`);
+    };
+
+    var nums [3]int;
+    nums[0] = 5;
+    nums[1] = 10;
+    nums[2] = nums[0] + nums[1];
+
+    println(nums[2]);
+    println(len(nums));
+
+    for i := 0; i < 3; i++ {
+        println(i);
+    };
+
+    imprimir(999);
+
+    println(`Fin MiniGo`);
+};

@@ -1,0 +1,8 @@
+.venv/
+.idea/
+__pycache__/
+*.pyc
+output/
+test.exe
+test.ll
+output/editor_input.mgo

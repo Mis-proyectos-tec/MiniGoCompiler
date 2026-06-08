@@ -1,0 +1,32 @@
+package main;
+
+func main() {
+    var x int = 10;
+    var y int = 5;
+
+    println(x);
+
+    x = 50;
+    println(x);
+
+    x += y;
+    println(x);
+
+    x -= 10;
+    println(x);
+
+    x *= 2;
+    println(x);
+
+    x /= 5;
+    println(x);
+
+    x %= 6;
+    println(x);
+
+    x++;
+    println(x);
+
+    x--;
+    println(x);
+};

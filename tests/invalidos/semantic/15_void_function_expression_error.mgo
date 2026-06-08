@@ -1,0 +1,10 @@
+package main;
+
+func imprimir() {
+    println(10);
+};
+
+func main() {
+    var x int = imprimir();
+    println(x);
+};

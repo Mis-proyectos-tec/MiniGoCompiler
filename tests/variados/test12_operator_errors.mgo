@@ -1,0 +1,15 @@
+package main;
+
+func main() {
+    var x int = 10;
+    var y int = 20;
+    var s string = `hola`;
+    var b bool = true;
+
+    var ok int = x + y;
+    var bad1 int = x + s;
+    var bad2 bool = x && y;
+    var bad3 int = s * s;
+    var bad4 int = x % s;
+    var bad5 bool = b < b;
+};
